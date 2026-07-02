@@ -1,0 +1,25 @@
+{
+  "name": "real-time-chat-app",
+  "version": "1.0.0",
+  "description": "A simple real-time chat application built with React, Node.js, Express, and Socket.IO, featuring instant messaging and a clean client-server architecture.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm run dev --prefix client",
+    "server": "npm start --prefix server",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menukahansda/real-time-chat-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/menukahansda/real-time-chat-app/issues"
+  },
+  "homepage": "https://github.com/menukahansda/real-time-chat-app#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
