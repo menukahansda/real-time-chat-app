@@ -5,18 +5,18 @@ export default function Message({ message, isOwn }) {
   });
 
   return (
-    <div className={`flex flex-col mb-2 ${isOwn ? "items-end" : "items-start"}`}>
+    <div className={`flex flex-col mb-1.5 ${isOwn ? "items-end" : "items-start"}`}>
       <div
-        className={`rounded px-2 py-1 max-w-xs ${
+        className={` inline-block rounded px-1 py-0.5 min-w-[60px] max-w-[240px] ${
           isOwn ? "bg-emerald-600 text-white" : "bg-gray-200 text-black"
         }`}
       >
         {!isOwn && (
-          <div className="text-xs font-semibold mb-1">{message.username}</div>
+          <div className="text-[11px] font-semibold leading-none mb-[2px]">{message.username}</div>
         )}
-        <div>{message.text}</div>
+        <div className="text-sm leading-tight break-words">{message.text}</div>
       </div>
-      <div className="text-xs text-gray-500 mt-1">{time}</div>
+      <div className="text-xs text-gray-500 mt-0.5">{time}</div>
     </div>
   );
 }
