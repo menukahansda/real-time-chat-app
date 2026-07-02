@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin : "*"
+        origin : process.env.CLIENT_URL || "http://localhost:5173",
     }
 })
 
