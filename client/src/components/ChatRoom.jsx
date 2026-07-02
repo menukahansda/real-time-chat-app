@@ -11,12 +11,15 @@ export default function ChatRoom({ username }) {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
-  
+
   // fetch chat history, then connect socket and listen for live messages
   useEffect(() => {
     let ignore = false;
 
-    fetch("http://localhost:3000/messages")
+    const API_URL =
+      import.meta.env.VITE_APP_SOCKET_URL || "http://localhost:3000";
+
+    fetch(`${API_URL}/messages`)
       .then((res) => res.json())
       .then((data) => {
         if (!ignore) setMessages(data);
