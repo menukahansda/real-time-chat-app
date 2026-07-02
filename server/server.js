@@ -11,6 +11,7 @@ const server = http.createServer(app);
 
 const allowedOrigins = [
   "http://localhost:5173",
+  "https://menukahansda.github.io",
   process.env.CLIENT_URL, 
 ].filter(Boolean);
 
@@ -23,7 +24,7 @@ const io = new Server(server, {
 
 let messages = [];
 
-app.use(cors());
+app.use(cors({ origin: allowedOrigins }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
