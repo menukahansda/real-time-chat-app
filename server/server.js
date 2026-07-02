@@ -1,6 +1,7 @@
 import express from "express";
 import http from "http";
 import { Server } from "socket.io";
+import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -15,10 +16,15 @@ const io = new Server(server, {
 
 let messages = [];
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
     res.send("Home page. Server working!");
+});
+
+app.get("/messages", (req, res) => {
+    res.json(messages);
 });
 
 io.on("connection", (socket) => {
