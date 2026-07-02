@@ -1,11 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { socket } from "../socket";
 import Message from "./Message";
 import MessageInput from "./MessageInput";
 
 export default function ChatRoom({ username }) {
   const [messages, setMessages] = useState([]);
+  const messagesEndRef = useRef(null);
 
+  // auto scroll to down when new messages arrive
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+  
   // fetch chat history, then connect socket and listen for live messages
   useEffect(() => {
     let ignore = false;
@@ -52,6 +58,7 @@ export default function ChatRoom({ username }) {
                 isOwn={m.socketId === socket.id}
               />
             ))}
+            <div ref={messagesEndRef} />
           </div>
           <div className="p-2 border-t border-gray-800">
             <MessageInput />
