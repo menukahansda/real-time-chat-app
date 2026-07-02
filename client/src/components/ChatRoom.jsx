@@ -40,7 +40,6 @@ export default function ChatRoom({ username }) {
 
   return (
     <div className="h-screen w-full flex flex-col bg-gray-900">
-      {/* Top title (not centered) */}
       <div className="py-4 text-center">
         <h1 className="text-4xl font-bold">Real Time Chat App</h1>
       </div>
