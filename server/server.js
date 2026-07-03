@@ -35,6 +35,10 @@ app.get("/messages", (req, res) => {
     res.json(messages);
 });
 
+app.get("/health", (req, res) => {
+    res.status(200).json({ status: "OK" });
+});
+
 io.on("connection", (socket) => {
     console.log("A user connected:", socket.id);
 
