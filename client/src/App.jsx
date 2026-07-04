@@ -4,8 +4,8 @@ import Login from "./components/Login";
 import ChatRoom from "./components/ChatRoom";
 import { LoaderCircle } from "lucide-react";
 
-const MAX_TRIES = 3;
-const RETRY_DELAY = 2000;
+const MAX_TRIES = 15;
+const RETRY_DELAY = 4000;
 
 export default function App() {
   const [username, setUsername] = useState(null);
