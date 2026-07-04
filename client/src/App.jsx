@@ -69,7 +69,7 @@ export default function App() {
         <LoaderCircle className="spinner" size={50} />
         {attempted > 0 && (
           <span>
-            Retrying... ({attempted}/{MAX_TRIES})
+            Waking up the server, this can take up to a minute... ({attempted}/{MAX_TRIES})
           </span>
         )}
       </span>
