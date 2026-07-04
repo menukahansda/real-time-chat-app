@@ -70,7 +70,7 @@ web_modules/
 .env
 .env.*
 !.env.example
-!client/.env.development
+!client/.env
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
